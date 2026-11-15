@@ -5,7 +5,8 @@
     "tamanho": "M",
     "cor": "Branca",
     "preco": 49.9,
-    "imagem_url": "/produtos/01.jpg"
+    "imagem_url": "/produtos/01.jpg",
+    "categoria": "dorso"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "tamanho": "G",
     "cor": "Azul",
     "preco": 119.9,
-    "imagem_url": "/produtos/02.jpg"
+    "imagem_url": "/produtos/02.jpg",
+    "categoria": "dorso"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "tamanho": "42",
     "cor": "Azul",
     "preco": 159.9,
-    "imagem_url": "/produtos/03.jpg"
+    "imagem_url": "/produtos/03.jpg",
+    "categoria": "perna"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "tamanho": "40",
     "cor": "Preta",
     "preco": 189.9,
-    "imagem_url": "/produtos/04.jpg"
+    "imagem_url": "/produtos/04.jpg",
+    "categoria": "perna"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "tamanho": "M",
     "cor": "Bege",
     "preco": 89.9,
-    "imagem_url": "/produtos/05.jpg"
+    "imagem_url": "/produtos/05.jpg",
+    "categoria": "perna"
   },
   {
     "id": 6,
@@ -45,7 +50,9 @@
     "tamanho": "P",
     "cor": "Vermelho",
     "preco": 169.9,
-    "imagem_url": "/produtos/06.jpg"
+    "imagem_url": "/produtos/06.jpg",
+    "categoria": "dorso",
+    "peca_unica": true
   },
   {
     "id": 7,
@@ -53,7 +60,8 @@
     "tamanho": "M",
     "cor": "Azul",
     "preco": 219.9,
-    "imagem_url": "/produtos/07.jpg"
+    "imagem_url": "/produtos/07.jpg",
+    "categoria": "sobretudo"
   },
   {
     "id": 8,
@@ -61,7 +69,8 @@
     "tamanho": "G",
     "cor": "Cinza",
     "preco": 139.9,
-    "imagem_url": "/produtos/08.jpg"
+    "imagem_url": "/produtos/08.jpg",
+    "categoria": "sobretudo"
   },
   {
     "id": 9,
@@ -69,7 +78,8 @@
     "tamanho": "41",
     "cor": "Branco",
     "preco": 249.9,
-    "imagem_url": "/produtos/09.jpg"
+    "imagem_url": "/produtos/09.jpg",
+    "categoria": "pe"
   },
   {
     "id": 10,
@@ -77,7 +87,8 @@
     "tamanho": "38",
     "cor": "Marrom",
     "preco": 299.9,
-    "imagem_url": "/produtos/10.jpg"
+    "imagem_url": "/produtos/10.jpg",
+    "categoria": "pe"
   },
   {
     "id": 11,
@@ -85,7 +96,8 @@
     "tamanho": "P",
     "cor": "Preta",
     "preco": 109.9,
-    "imagem_url": "/produtos/11.jpg"
+    "imagem_url": "/produtos/11.jpg",
+    "categoria": "perna"
   },
   {
     "id": 12,
@@ -93,6 +105,7 @@
     "tamanho": "M",
     "cor": "Preto",
     "preco": 279.9,
-    "imagem_url": "/produtos/12.jpg"
+    "imagem_url": "/produtos/12.jpg",
+    "categoria": "sobretudo"
   }
 ]

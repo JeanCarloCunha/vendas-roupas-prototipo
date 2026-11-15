@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { getAll, insert } from '../../services/storage'
+import { CATEGORIAS, rotuloCategoria } from '../../data/categorias'
 
 // Reduz a foto enviada (máx. 600px) e converte para texto, para caber no localStorage
 function lerImagem(arquivo) {
@@ -23,7 +24,7 @@ function lerImagem(arquivo) {
   })
 }
 
-const VAZIO = { nome: '', tamanho: '', cor: '', preco: '', imagem_url: '' }
+const VAZIO = { nome: '', categoria: '', tamanho: '', cor: '', preco: '', imagem_url: '' }
 
 export default function AdminProdutos() {
   const [form, setForm] = useState(VAZIO)
@@ -50,11 +51,13 @@ export default function AdminProdutos() {
     if (!form.nome.trim() || !form.tamanho.trim() || !form.cor.trim()) {
       return setErro('Preencha nome, tamanho e cor.')
     }
+    if (!form.categoria) return setErro('Escolha a categoria da peça.')
     if (!preco || preco <= 0) return setErro('Informe um preço maior que zero.')
     if (!form.imagem_url.trim()) return setErro('Envie uma foto ou informe a URL da imagem.')
 
     insert('produtos', {
       nome: form.nome.trim(),
+      categoria: form.categoria,
       tamanho: form.tamanho.trim(),
       cor: form.cor.trim(),
       preco,
@@ -74,6 +77,12 @@ export default function AdminProdutos() {
 
       <form onSubmit={salvar} className="bg-white border rounded p-4 grid gap-3 max-w-xl mb-8">
         <input className={campo} placeholder="Nome" value={form.nome} onChange={atualizar('nome')} />
+        <select className={campo} value={form.categoria} onChange={atualizar('categoria')}>
+          <option value="">Categoria (usada no provador)</option>
+          {CATEGORIAS.map((c) => (
+            <option key={c.id} value={c.id}>{c.label} – {c.exemplo}</option>
+          ))}
+        </select>
         <div className="grid grid-cols-2 gap-3">
           <input className={campo} placeholder="Tamanho (ex.: M, 42)" value={form.tamanho} onChange={atualizar('tamanho')} />
           <input className={campo} placeholder="Cor" value={form.cor} onChange={atualizar('cor')} />
@@ -101,7 +110,7 @@ export default function AdminProdutos() {
         <table className="w-full text-sm">
           <thead className="bg-gray-100 text-left">
             <tr>
-              <th className="p-2">Imagem</th><th className="p-2">Nome</th><th className="p-2">Tamanho</th>
+              <th className="p-2">Imagem</th><th className="p-2">Nome</th><th className="p-2">Categoria</th><th className="p-2">Tamanho</th>
               <th className="p-2">Cor</th><th className="p-2">Preço</th>
             </tr>
           </thead>
@@ -110,6 +119,7 @@ export default function AdminProdutos() {
               <tr key={p.id} className="border-t">
                 <td className="p-2"><img src={p.imagem_url} alt={p.nome} className="w-10 h-12 object-cover rounded" /></td>
                 <td className="p-2">{p.nome}</td>
+                <td className="p-2">{rotuloCategoria(p.categoria)}</td>
                 <td className="p-2">{p.tamanho}</td>
                 <td className="p-2">{p.cor}</td>
                 <td className="p-2">R$ {Number(p.preco).toFixed(2).replace('.', ',')}</td>
