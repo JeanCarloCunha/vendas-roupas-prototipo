@@ -1,0 +1,14 @@
+[
+  { "id": 1,  "nome": "Camiseta Básica",     "tamanho": "M",  "cor": "Branca",   "preco": 49.9,  "imagem_url": "https://placehold.co/400x500?text=Camiseta" },
+  { "id": 2,  "nome": "Camisa Social",       "tamanho": "G",  "cor": "Azul",     "preco": 119.9, "imagem_url": "https://placehold.co/400x500?text=Camisa" },
+  { "id": 3,  "nome": "Calça Jeans",         "tamanho": "42", "cor": "Azul",     "preco": 159.9, "imagem_url": "https://placehold.co/400x500?text=Jeans" },
+  { "id": 4,  "nome": "Calça Alfaiataria",   "tamanho": "40", "cor": "Preta",    "preco": 189.9, "imagem_url": "https://placehold.co/400x500?text=Alfaiataria" },
+  { "id": 5,  "nome": "Bermuda",             "tamanho": "M",  "cor": "Bege",     "preco": 89.9,  "imagem_url": "https://placehold.co/400x500?text=Bermuda" },
+  { "id": 6,  "nome": "Vestido Midi",        "tamanho": "P",  "cor": "Vermelho", "preco": 169.9, "imagem_url": "https://placehold.co/400x500?text=Vestido" },
+  { "id": 7,  "nome": "Jaqueta Jeans",       "tamanho": "M",  "cor": "Azul",     "preco": 219.9, "imagem_url": "https://placehold.co/400x500?text=Jaqueta" },
+  { "id": 8,  "nome": "Moletom com Capuz",   "tamanho": "G",  "cor": "Cinza",    "preco": 139.9, "imagem_url": "https://placehold.co/400x500?text=Moletom" },
+  { "id": 9,  "nome": "Tênis Casual",        "tamanho": "41", "cor": "Branco",   "preco": 249.9, "imagem_url": "https://placehold.co/400x500?text=Tenis" },
+  { "id": 10, "nome": "Bota de Couro",       "tamanho": "38", "cor": "Marrom",   "preco": 299.9, "imagem_url": "https://placehold.co/400x500?text=Bota" },
+  { "id": 11, "nome": "Saia Plissada",       "tamanho": "P",  "cor": "Preta",    "preco": 109.9, "imagem_url": "https://placehold.co/400x500?text=Saia" },
+  { "id": 12, "nome": "Blazer",              "tamanho": "M",  "cor": "Preto",    "preco": 279.9, "imagem_url": "https://placehold.co/400x500?text=Blazer" }
+]
