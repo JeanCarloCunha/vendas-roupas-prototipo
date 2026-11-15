@@ -1,6 +1,7 @@
 // "Banco de dados" do protótipo: cada tabela do modelo de dados vira uma chave no localStorage.
 import produtosSeed from '../data/produtos.json'
 
+const SEED_VERSAO = '2' // altere ao mudar src/data/produtos.json
 const TABELAS = ['usuarios', 'produtos', 'itens_carrinho', 'pedidos', 'itens_pedido', 'looks', 'look_itens']
 
 export function getAll(tabela) {
@@ -30,7 +31,11 @@ export function initStorage() {
   TABELAS.forEach((t) => {
     if (localStorage.getItem(t) === null) saveAll(t, [])
   })
-  if (getAll('produtos').length === 0) saveAll('produtos', produtosSeed)
+  // Recarrega o catálogo inicial quando a versão do seed muda (ex.: troca das fotos)
+  if (getAll('produtos').length === 0 || localStorage.getItem('seed_produtos_versao') !== SEED_VERSAO) {
+    saveAll('produtos', produtosSeed)
+    localStorage.setItem('seed_produtos_versao', SEED_VERSAO)
+  }
   if (getAll('usuarios').length === 0) {
     // Admin de teste do protótipo
     saveAll('usuarios', [
