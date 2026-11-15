@@ -23,3 +23,17 @@ export function finalizarCompra(usuarioId) {
   saveAll('itens_carrinho', getAll('itens_carrinho').filter((i) => i.usuario_id !== usuarioId))
   return pedido
 }
+
+export function pedidosDoUsuario(usuarioId) {
+  const produtos = getAll('produtos')
+  const itens = getAll('itens_pedido')
+  return getAll('pedidos')
+    .filter((p) => p.usuario_id === usuarioId)
+    .sort((a, b) => b.id - a.id)
+    .map((p) => ({
+      ...p,
+      itens: itens
+        .filter((i) => i.pedido_id === p.id)
+        .map((i) => ({ ...i, produto: produtos.find((pr) => pr.id === i.produto_id) })),
+    }))
+}
