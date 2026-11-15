@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import ClienteLayout from './layouts/ClienteLayout.jsx'
 import AdminLayout from './layouts/AdminLayout.jsx'
+import RotaAdmin from './components/RotaAdmin.jsx'
 
 import Login from './pages/Login.jsx'
 import Home from './pages/cliente/Home.jsx'
@@ -25,10 +26,12 @@ export default function App() {
         <Route path="/historico" element={<Historico />} />
       </Route>
 
-      {/* Área administrativa (a proteção por perfil entra no RF01) */}
-      <Route path="/admin" element={<AdminLayout />}>
-        <Route index element={<Navigate to="/admin/produtos" replace />} />
-        <Route path="produtos" element={<AdminProdutos />} />
+      {/* Área administrativa: só perfil admin (RF01) */}
+      <Route element={<RotaAdmin />}>
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Navigate to="/admin/produtos" replace />} />
+          <Route path="produtos" element={<AdminProdutos />} />
+        </Route>
       </Route>
     </Routes>
   )
